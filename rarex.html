@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .sidebar {
+            width: 20%;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .products {
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .filter-btn {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .filter-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Categories</h3>
+            <div class="filter-btn" onclick="filterCategory('western')">Western Clothes</div>
+            <div class="filter-btn" onclick="filterCategory('kurtis')">Kurtis</div>
+            <div class="filter-btn" onclick="filterCategory('traditional')">Traditional</div>
+            <div class="filter-btn" onclick="filterCategory('all')">Show All</div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="products" id="product-list">
+            <!-- Product 1 -->
+            <div class="product" data-category="western">
+                <img src="https://via.placeholder.com/150" alt="Western Jacket">
+                <h3>Western Jacket</h3>
+                <p>Price: $45.00</p>
+            </div>
+            <!-- Product 2 -->
+            <div class="product" data-category="western">
+                <img src="https://via.placeholder.com/150" alt="Western Jeans">
+                <h3>Western Jeans</h3>
+                <p>Price: $40.00</p>
+            </div>
+            <!-- Product 3 -->
+            <div class="product" data-category="kurtis">
+                <img src="https://via.placeholder.com/150" alt="Kurti">
+                <h3>Stylish Kurti</h3>
+                <p>Price: $30.00</p>
+            </div>
+            <!-- Product 4 -->
+            <div class="product" data-category="traditional">
+                <img src="https://via.placeholder.com/150" alt="Saree">
+                <h3>Traditional Saree</h3>
+                <p>Price: $60.00</p>
+            </div>
+            <!-- Product 5 -->
+            <div class="product" data-category="western">
+                <img src="https://via.placeholder.com/150" alt="Western Shirt">
+                <h3>Western Shirt</h3>
+                <p>Price: $35.00</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCategory(category) {
+            var products = document.querySelectorAll('.product');
+            products.forEach(function(product) {
+                if (category === 'all') {
+                    product.style.display = 'block';  // Show all products
+                } else if (product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';  // Show products of selected category
+                } else {
+                    product.style.display = 'none';  // Hide others
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

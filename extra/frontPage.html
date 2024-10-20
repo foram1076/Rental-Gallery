@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+    <style>
+        /* Basic styles for layout */
+        body {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="loadCategory('western')">Western Clothes</a></li>
+            <li><a href="#" onclick="loadCategory('denim')">Denim</a></li>
+            <!-- Add more categories as needed -->
+        </ul>
+    </div>
+
+    <div class="content" id="productDisplay">
+        <!-- Products will be displayed here -->
+        <h2>Select a category to view products</h2>
+    </div>
+
+    <script>
+        function loadCategory(category) {
+            // Use AJAX to load products for the selected category
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'getProducts.php?category=' + category, true);
+            xhr.onload = function() {
+                if (this.status == 200) {
+                    document.getElementById('productDisplay').innerHTML = this.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

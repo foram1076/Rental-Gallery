@@ -1,0 +1,80 @@
+/* mycss.css */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6e00ff, #2d95ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.admin-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-form h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Add padding to the left for the icon */
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.extra {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.extra a {
+    color: #333;
+    text-decoration: none;
+}
+
+.extra a:hover {
+    text-decoration: underline;
+}
